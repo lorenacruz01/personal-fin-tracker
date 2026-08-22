@@ -1,43 +1,42 @@
 # Personal Fin Tracker
 
-Personal finance management application focused on providing a clear overview of financial health through expense tracking, credit card management, recurring expenses, and purchase planning.
+Aplicação de gestão de finanças pessoais voltada a oferecer uma visão clara da saúde financeira por meio do acompanhamento de despesas, gerenciamento de cartões de crédito, despesas recorrentes e planejamento de compras.
 
-The project is being developed as a personal portfolio and learning project, with an emphasis on **software architecture, API security, authentication, authorization, and integration with external services**.
+O projeto está sendo desenvolvido como portfólio pessoal e projeto de aprendizado, com ênfase em **arquitetura de software, segurança de APIs, autenticação, autorização e integração com serviços externos**.
 
-## Project Goals
+## Objetivos do projeto
 
-The main goal of Personal Fin Tracker is to provide a centralized view of personal finances, helping users understand how their spending affects their monthly budget and financial planning.
+O objetivo principal do Personal Fin Tracker é oferecer uma visão centralizada das finanças pessoais, ajudando usuários a entender como seus gastos afetam o orçamento mensal e o planejamento financeiro.
 
-The application will allow users to:
+A aplicação permitirá:
 
-* Track personal expenses.
-* Manage credit cards and their expenses.
-* Register recurring and fixed expenses.
-* Plan future purchases.
-* Evaluate the impact of planned purchases on the available budget.
-* Visualize an overview of their financial health.
+* Acompanhar despesas pessoais.
+* Gerenciar cartões de crédito e suas despesas.
+* Registrar despesas recorrentes e fixas.
+* Planejar compras futuras.
+* Avaliar o impacto de compras planejadas no orçamento disponível.
+* Visualizar uma visão geral da saúde financeira.
 
-## Architecture
+## Arquitetura
 
-The backend will follow **Clean Architecture**, keeping business rules independent from infrastructure and external services.
+O backend seguirá a **Clean Architecture**, mantendo as regras de negócio independentes da infraestrutura e de serviços externos.
 
-The project will be structured around the following layers:
+O projeto será estruturado nas seguintes camadas:
 
-* **Domain** — Business entities and domain rules.
-* **Application** — Application use cases and business orchestration.
-* **Infrastructure** — Persistence and integrations with external services.
-* **API** — HTTP interface and application entry point.
+* **Domain** — Entidades de negócio e regras de domínio.
+* **Application** — Casos de uso da aplicação e orquestração de negócio.
+* **Infrastructure** — Persistência e integrações com serviços externos.
+* **API** — Interface HTTP e ponto de entrada da aplicação.
 
-The frontend will be developed separately using React.js.
+O frontend será desenvolvido separadamente com React.js.
 
-## Technologies
+## Tecnologias
 
 ### Backend
 
 * .NET
 * C#
 * Minimal API
-* Entity Framework Core
 * Clean Architecture
 
 ### Frontend
@@ -46,81 +45,79 @@ The frontend will be developed separately using React.js.
 * TypeScript
 * Vite
 
-### Authentication & Security
+### Autenticação e segurança
 
 * Google OAuth / OpenID Connect
-* Authentication
-* Authorization
-* Secure API access
-* Token-based authentication
+* Autenticação
+* Autorização
+* Acesso seguro à API
+* Autenticação baseada em token
 
-### Data & External Services
+### Dados e serviços externos
 
-The project will evaluate the use of **Google Sheets API** as a persistence mechanism, allowing financial data to remain associated with the user's own Google account.
+O projeto avaliará o uso da **Google Sheets API** como mecanismo inicial de persistência, mantendo os dados financeiros associados à própria conta Google do usuário. O **Entity Framework Core** poderá ser explorado futuramente caso a estratégia de persistência evolua para um banco de dados relacional.
 
-Entity Framework Core will also be used in the project to explore data access and persistence concepts.
+## Segurança
 
-## Security
+Segurança é um dos principais objetivos de aprendizado deste projeto.
 
-Security is one of the main learning objectives of this project.
+A API explorará conceitos como:
 
-The API will explore concepts such as:
-
-* Authentication
-* Authorization
+* Autenticação
+* Autorização
 * OAuth 2.0
 * OpenID Connect
-* Access tokens
+* Tokens de acesso
 * Claims
-* Resource-based authorization
-* Secure configuration
-* Secret management
-* API input validation
+* Autorização baseada em recurso
+* Configuração segura
+* Gerenciamento de segredos
+* Validação de entrada da API
 * CORS
-* Error handling
+* Tratamento de erros
 
-The application should never rely solely on identifiers supplied by the client to determine which user's resources can be accessed. User identity and permissions should be derived from the authenticated context.
+A aplicação nunca deve depender apenas de identificadores fornecidos pelo cliente para determinar quais recursos de um usuário podem ser acessados. A identidade e as permissões do usuário devem ser obtidas do contexto autenticado.
 
-## Planned Features
+## Funcionalidades planejadas
 
-* [ ] User authentication with Google
-* [ ] User authorization
-* [ ] Financial dashboard
-* [ ] Expense management
-* [ ] Credit card management
-* [ ] Recurring expense management
-* [ ] Purchase planning
-* [ ] Budget impact analysis
-* [ ] Financial summaries
-* [ ] Google Sheets integration
-* [ ] Automated tests
-* [ ] Docker support
-* [ ] CI/CD pipeline
+* [ ] Autenticação de usuário com Google
+* [ ] Autorização de usuário
+* [ ] Painel financeiro
+* [ ] Gerenciamento de despesas
+* [ ] Gerenciamento de cartões de crédito
+* [ ] Gerenciamento de despesas recorrentes
+* [ ] Planejamento de compras
+* [ ] Análise de impacto no orçamento
+* [ ] Resumos financeiros
+* [ ] Integração com Google Sheets
+* [ ] Testes automatizados
+* [ ] Suporte a Docker
+* [ ] Pipeline de CI/CD
 
-## Learning Objectives
+## Objetivos de aprendizado
 
-This project is also intended to provide practical experience with:
+Este projeto também busca oferecer experiência prática com:
 
 * Clean Architecture
-* Domain-Driven Design concepts
+* Conceitos de Domain-Driven Design
 * Minimal APIs
-* REST API development
-* Authentication and authorization
+* Desenvolvimento de APIs REST
+* Autenticação e autorização
 * OAuth 2.0 / OpenID Connect
-* API security
+* Segurança de APIs
 * Entity Framework Core
 * React.js
-* External API integration
-* Automated testing
-* Containerization
+* Integração com APIs externas
+* Testes automatizados
+* Containerização
 * CI/CD
 
-## Project Status
+## Status do projeto
 
-**In development.**
+**Em desenvolvimento.**
 
-The architecture and technical decisions may evolve as the project progresses and new requirements are identified.
+A arquitetura e as decisões técnicas podem evoluir à medida que o projeto avançar e novos requisitos forem identificados.
 
-## License
+## Licença
 
-This project is licensed under the MIT License.
+Este projeto é licenciado sob a licença MIT.
