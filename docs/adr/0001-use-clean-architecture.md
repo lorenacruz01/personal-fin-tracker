@@ -1,35 +1,67 @@
-# ADR 0001: Adotar Clean Architecture no backend
+# ADR 0001: Adoção de Clean Architecture
 
-- **Status:** Accepted
-- **Data:** 2026-08-18
+* **Status:** Accepted
+* **Data:** 2026-09-08
 
 ## Contexto
 
-O backend precisa evoluir funcionalidades financeiras, autenticação, autorização, persistência e integrações externas sem acoplar as regras de negócio a frameworks ou provedores específicos. O projeto também tem como objetivo praticar separação de responsabilidades, testabilidade e manutenção de longo prazo.
+O Personal Fin Tracker será desenvolvido como uma aplicação full stack com regras de negócio, persistência de dados, interface HTTP e integrações com serviços externos.
+
+O projeto possui também um objetivo de aprendizado e portfólio, buscando demonstrar conhecimento em arquitetura de software e boas práticas de desenvolvimento.
+
+É necessário evitar que as regras de negócio fiquem diretamente acopladas ao framework web, ao banco de dados ou a serviços externos, permitindo que essas preocupações possam evoluir de forma independente.
 
 ## Decisão
 
-O backend será organizado segundo os princípios de Clean Architecture, inicialmente nos projetos `Domain`, `Application`, `Infrastructure` e `Api`.
+O backend adotará os princípios da **Clean Architecture**, organizando a aplicação nas seguintes camadas:
 
-- `Domain` conterá entidades, regras e conceitos centrais do domínio financeiro.
-- `Application` conterá casos de uso, orquestração e abstrações necessárias.
-- `Infrastructure` implementará persistência e integrações externas.
-- `Api` exporá os contratos HTTP e fará a composição da aplicação.
+* **Domain** — entidades, value objects e regras de negócio;
+* **Application** — casos de uso, contratos e orquestração;
+* **Infrastructure** — persistência e integrações externas;
+* **API** — interface HTTP e composição da aplicação.
 
-As dependências apontarão para dentro: `Domain` não dependerá das demais camadas, e `Application` dependerá de abstrações, não de detalhes de infraestrutura.
+As dependências deverão apontar para dentro da aplicação, mantendo o domínio independente de detalhes de infraestrutura.
+
+A infraestrutura poderá implementar abstrações definidas pelas camadas internas quando necessário.
+
+A arquitetura não deverá ser utilizada como justificativa para introduzir abstrações ou complexidade sem uma necessidade concreta.
 
 ## Consequências
 
-- Regras de negócio podem ser testadas sem depender de banco de dados, APIs externas ou HTTP.
-- Alterações de persistência ou integrações tendem a ficar isoladas em `Infrastructure`.
-- A solução terá mais projetos e contratos explícitos, o que aumenta a disciplina e o custo inicial de organização.
-- Abstrações só devem ser adicionadas quando suportarem uma necessidade real do domínio ou de um caso de uso.
+### Benefícios
+
+* Separação clara de responsabilidades.
+* Maior independência das regras de negócio em relação à infraestrutura.
+* Facilita testes unitários das regras de negócio.
+* Facilita a substituição ou evolução de componentes externos.
+* Demonstra conhecimento de arquitetura de software relevante para o objetivo do projeto.
+
+### Custos e riscos
+
+* Maior quantidade de projetos, interfaces e abstrações.
+* Possível aumento de complexidade para funcionalidades simples.
+* Risco de overengineering caso os princípios sejam aplicados de forma excessivamente rígida.
+
+### Ações decorrentes
+
+* Manter o domínio independente de frameworks e infraestrutura.
+* Centralizar casos de uso na camada Application.
+* Isolar persistência e integrações na Infrastructure.
+* Revisar novas dependências para garantir que respeitem a direção arquitetural.
 
 ## Alternativas consideradas
-Foi considerada uma estrutura mais simples de camadas, porém optou-se
-pela Clean Architecture devido ao objetivo de manter as regras de negócio
-independentes de detalhes de infraestrutura e praticar separação de
-responsabilidades.
+
+### Arquitetura em camadas tradicional
+
+Poderia simplificar a estrutura inicial, mas ofereceria menor isolamento entre regras de negócio e infraestrutura.
+
+Não foi escolhida porque o projeto possui como objetivo explícito demonstrar conhecimentos de arquitetura e separação de responsabilidades.
+
+### Monólito sem separação arquitetural
+
+Seria a alternativa mais simples, porém dificultaria a evolução e o teste isolado das regras de negócio.
+
+Não foi escolhida.
 
 
-[← Voltar ao guia de ADRs](README.md)
+[← Voltar para o índice de ADRs](README.md)

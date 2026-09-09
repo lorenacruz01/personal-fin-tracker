@@ -18,3 +18,5 @@ Liste os benefícios, custos, riscos, limitações e ações decorrentes da deci
 ## Alternativas consideradas
 
 Liste as alternativas relevantes e por que não foram escolhidas, quando aplicável.
+
+[← Voltar para o índice de ADRs](README.md)
