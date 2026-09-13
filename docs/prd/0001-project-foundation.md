@@ -1,6 +1,6 @@
 # PRD 0001: Fundação do Projeto
 
-* **Status:** Draft
+* **Status:** In Progress
 
 ## Contexto
 
@@ -74,7 +74,7 @@ Deve ser possível iniciar o backend e o frontend em ambiente local seguindo as 
 
 ## Critérios de aceitação
 
-* [ ] A solução possui os projetos `Domain`, `Application`, `Infrastructure` e `API`.
+* [x] A solução possui os projetos `Domain`, `Application`, `Infrastructure` e `API`.
 * [ ] O backend é compilável e executável localmente.
 * [ ] O frontend é compilável e executável localmente.
 * [ ] O frontend consegue realizar uma requisição ao backend.

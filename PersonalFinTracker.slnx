@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PersonalFinTracker.API/PersonalFinTracker.API.csproj" />
+    <Project Path="src/PersonalFinTracker.Application/PersonalFinTracker.Application.csproj" />
+    <Project Path="src/PersonalFinTracker.Domain/PersonalFinTracker.Domain.csproj" />
+    <Project Path="src/PersonalFinTracker.Infrastructure/PersonalFinTracker.Infrastructure.csproj" />
+  </Folder>
+</Solution>
