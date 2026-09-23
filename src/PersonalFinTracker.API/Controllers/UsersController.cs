@@ -21,12 +21,7 @@ namespace PersonalFinTracker.Api.Controllers
         {
             Guid id = await _userService.CreateAsync(request.Name, request.Email);
 
-            UserResponse response = new UserResponse
-            {
-                Id = id,
-                Name = request.Name,
-                Email = request.Email
-            };
+            UserResponse response = new UserResponse(id, request.Name, request.Email);
 
             return CreatedAtAction(nameof(GetById), new { id }, response);
         }
